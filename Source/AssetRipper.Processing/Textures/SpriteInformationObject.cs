@@ -73,7 +73,8 @@ public sealed class SpriteInformationObject : AssetGroup, INamed
 			{
 				dictionary[sprite] = atlas;
 			}
-			else if (atlas is not null && atlas != mappedAtlas)
+			else if (atlas is not null && atlas.MasterAtlas_C687078895 is not null 
+            && atlas.MasterAtlas_C687078895 != mappedAtlas.MasterAtlas_C687078895)
 			{
 				throw new Exception($"{nameof(atlas)} is not the same as {nameof(mappedAtlas)}");
 			}
